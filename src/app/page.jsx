@@ -71,7 +71,7 @@ export default function Home() {
                 <p className="max-w-[600px] text-neutral-500 md:text-xl">
                   Impulsione sua presença digital e acelere sua jornada
                   tecnológica com soluções inteligentes feitas para o futuro do
-                  seu negócio
+                  seu negócio.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
