@@ -40,7 +40,7 @@ export default function Carousel() {
           className="flex flex-col text-center justify-center items-center gap-8"
         >
           <div className="flex flex-col items-center justify-center gap-3">
-            <Quote color="#ababab" size={78} />
+            <Quote color="#dbdbdb" size={78} />
             <p className="text-gray-700 font-light text-xl italic max-w-5xl">
               {testimonial.content}
             </p>
