@@ -3,7 +3,8 @@ import Link from "next/link"
 import { ButtonDark, ButtonLight } from "@/components/ui/button"
 import Card from "@/components/ui/card"
 import PropBox from "@/components/ui/prop"
-import Carousel from "@/components/carousel"
+import WorkCard from "@/components/ui/workcard"
+
 import {
   LaptopMinimalCheck,
   GlobeLock,
@@ -12,6 +13,10 @@ import {
   Globe,
   PanelsTopLeft,
   Share2,
+  MessageSquare,
+  Search,
+  Rocket,
+  CircleCheckBig 
 } from "lucide-react"
 
 const mainimg = "/images/mainimg_1.png"
@@ -120,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="grid justify-center bg-gray-50">
+      <section className="grid justify-center bg-gray-50 mb-14">
         <div className="flex justify-center mx-39 py-18 gap-4">
           <Image
             src={profileimg}
@@ -163,22 +168,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="grid justify-center bg-white mx-39 py-18 text-center">
-        <div className="flex flex-col items-center justify-center">
-          <PropBox children="Depoimentos" />
-          <div className="flex flex-col items-center justify-center mb-12">
-            <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-5xl text-left mb-3">
-              O Que Dizem Nossos Clientes
-            </h1>
-            <p className="text-muted-foreground text-neutral-500 md:text-xl text-left">
-              O Que Dizem Nossos Clientes Veja o que nossos clientes têm a dizer
-              sobre nossos serviços de consultoria.
-            </p>
-          </div>
-          <Carousel />
+      {/* Como trabalhamos */}
+      <section className="flex flex-col justify-center items-center mb-14">
+        <PropBox>Processo</PropBox>
+        <div className="flex flex-col justify-center items-center pb-8">
+          <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-5xl text-left mb-3">
+            Como Trabalhamos Juntos
+          </h1>
+          <p className="text-muted-foreground text-neutral-500 md:text-xl text-center">
+            Um processo estruturado e transparente para garantir os melhores
+            resultados.
+          </p>
+        </div>
+        <div className="flex flex-row gap-6">
+          <WorkCard
+            icon={<MessageSquare color="#000000" size={40} />}
+            title="1. Consultoria Inicial"
+            description="Conversamos sobre suas necessidades e objetivos para entender o escopo do projeto."
+          />
+          <WorkCard
+            icon={<Search color="#000000" size={40} />}
+            title="2. Análise Detalhada"
+            description="Realizamos um diagnóstico completo da situação atual e identificamos oportunidades."
+          />
+          <WorkCard
+            icon={<Rocket color="#000000" size={40} />}
+            title="3. Implementação"
+            description="Executamos a estratégia definida com acompanhamento constante e ajustes necessários."
+          />
+          <WorkCard
+            icon={<CircleCheckBig color="#000000" size={40} />}
+            title="4. Resultados"
+            description="Monitoramos os resultados e fornecemos relatórios detalhados de performance."
+          />
         </div>
       </section>
+      
     </main>
   )
 }
