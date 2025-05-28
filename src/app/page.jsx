@@ -4,6 +4,7 @@ import { ButtonDark, ButtonLight } from "@/components/ui/button"
 import Card from "@/components/ui/card"
 import PropBox from "@/components/ui/prop"
 import WorkCard from "@/components/ui/workcard"
+import EmailForm from "@/components/layout/mailform"
 
 import {
   LaptopMinimalCheck,
@@ -16,7 +17,7 @@ import {
   MessageSquare,
   Search,
   Rocket,
-  CircleCheckBig 
+  CircleCheckBig,
 } from "lucide-react"
 
 const mainimg = "/images/mainimg_1.png"
@@ -203,7 +204,21 @@ export default function Home() {
           />
         </div>
       </section>
-      
+
+      {/* Forma de contato */}
+      <section className="flex flex-col justify-center items-center py-14 bg-neutral-100">
+        <PropBox>Contato</PropBox>
+        <div className="flex flex-col justify-center items-center pb-8">
+          <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-5xl text-left mb-3">
+            Vamos Conversar
+          </h1>
+          <p className="text-muted-foreground text-neutral-500 md:text-xl text-center">
+            Preencha o formulário abaixo e entrarei em contato o mais breve
+            possível.
+          </p>
+        </div>
+        <EmailForm />
+      </section>
     </main>
   )
 }
