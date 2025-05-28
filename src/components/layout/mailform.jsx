@@ -1,15 +1,15 @@
-"use client";
-import { InputBox, InputText } from "@/components/ui/inputs";
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+"use client"
+import { InputBox, InputText } from "@/components/ui/inputs"
+import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
 
 export default function EmailForm() {
-  const form = useRef();
-  const [isLoading, setIsLoading] = useState(false);
+  const form = useRef()
+  const [isLoading, setIsLoading] = useState(false)
 
   const enviarEmail = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+    e.preventDefault()
+    setIsLoading(true)
 
     emailjs
       .sendForm(
@@ -20,17 +20,17 @@ export default function EmailForm() {
       )
       .then(
         (result) => {
-          console.log("Mensagem enviada:", result.text);
-          alert("Mensagem enviada com sucesso!");
-          form.current.reset();
+          console.log("Mensagem enviada:", result.text)
+          alert("Mensagem enviada com sucesso!")
+          form.current.reset()
         },
         (error) => {
-          console.error("Erro ao enviar:", error.text);
-          alert("Ocorreu um erro ao enviar. Tente novamente.");
+          console.error("Erro ao enviar:", error.text)
+          alert("Ocorreu um erro ao enviar. Tente novamente.")
         }
       )
-      .finally(() => setIsLoading(false));
-  };
+      .finally(() => setIsLoading(false))
+  }
 
   return (
     <div className="w-full h-fit flex flex-col justify-center items-center">
@@ -46,6 +46,7 @@ export default function EmailForm() {
             type="text"
             placeholder="Insira seu nome"
             label="Nome *"
+            required={true}
           />
           <InputBox
             id="email"
@@ -53,6 +54,7 @@ export default function EmailForm() {
             type="email"
             placeholder="Insira seu e-mail"
             label="Email *"
+            required={true}
           />
           <InputBox
             id="telefone"
@@ -60,6 +62,7 @@ export default function EmailForm() {
             type="text"
             placeholder="Insira seu telefone"
             label="Telefone *"
+            required={true}
           />
           <InputBox
             id="empresa"
@@ -73,6 +76,7 @@ export default function EmailForm() {
         <InputText
           name="message"
           placeholder="Descreva sua necessidade ou projeto..."
+          required={true}
         />
 
         <button
@@ -110,5 +114,5 @@ export default function EmailForm() {
         </button>
       </form>
     </div>
-  );
+  )
 }

@@ -1,6 +1,6 @@
 import React from "react"
 
-const InputBox = ({ id, placeholder, type, label, name }) => {
+const InputBox = ({ id, placeholder, type, label, name, required = false }) => {
   return (
     <div className="w-full flex flex-col gap-1">
       <label htmlFor={id} className="text-base">
@@ -8,6 +8,7 @@ const InputBox = ({ id, placeholder, type, label, name }) => {
       </label>
       <input
         id={id}
+        required={required}
         name={name}
         type={type}
         placeholder={placeholder}
