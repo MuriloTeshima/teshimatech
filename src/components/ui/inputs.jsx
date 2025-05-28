@@ -1,6 +1,6 @@
 import React from "react"
 
-const InputBox = ({ id, placeholder, type, label }) => {
+const InputBox = ({ id, placeholder, type, label, name }) => {
   return (
     <div className="w-full flex flex-col gap-1">
       <label htmlFor={id} className="text-base">
@@ -8,6 +8,7 @@ const InputBox = ({ id, placeholder, type, label }) => {
       </label>
       <input
         id={id}
+        name={name}
         type={type}
         placeholder={placeholder}
         className="w-full bg-white border-1 border-neutral-300 py-2 px-2 rounded-md text-sm text-neutral-600"
@@ -16,7 +17,7 @@ const InputBox = ({ id, placeholder, type, label }) => {
   )
 }
 
-const InputText = ({ id, placeholder, label }) => {
+const InputText = ({ id, placeholder, label, name }) => {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="text-base">
@@ -26,7 +27,7 @@ const InputText = ({ id, placeholder, label }) => {
         placeholder={placeholder}
         className="bg-white border-1 border-neutral-300 py-2 px-4 rounded-md text-base text-neutral-600"
         rows={4}
-        name=""
+        name={name}
         id={id}
       ></textarea>
     </div>
